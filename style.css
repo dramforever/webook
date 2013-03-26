@@ -1,0 +1,14 @@
+#inner
+{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:auto;
+	margin-bottom:auto;
+}
+#outer
+{
+	text-align: center;
+	width:100%;
+	height:100%;
+}
