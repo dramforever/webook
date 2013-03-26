@@ -15,7 +15,7 @@ function choose(){
 }
 function init(){
 	if(
-		typeof window.list != "array" ||
+		typeof window.list != "object" ||
 		window.list.length == 0
 	)
 	{
