@@ -27,3 +27,5 @@ function init(){
 	document.getElementById("inner").addEventListener("click",toggle,false);
 	setInterval(10 , choose);
 }
+
+window.onload = init;
