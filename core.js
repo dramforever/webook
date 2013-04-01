@@ -24,8 +24,8 @@ function init(){
 	}
 	leng = window.list.length;
 	textEle = document.getElementById("inner");
-	document.getElementById("inner").addEventListener("click",toggle,false);
-	setInterval(10 , choose);
+	document.getElementById("inner").onclick = toggle;
+	setInterval(choose , 10);
 }
 
 window.onload = init;
