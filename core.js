@@ -8,7 +8,6 @@ function toggle()
 	running = !running;
 }
 function choose(){
-	console.log("In function choose");
 	if(!running)return;
 	var rand = Math.floor(Math.random()*leng);
 	show(window.list[rand]);
