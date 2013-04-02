@@ -1,4 +1,4 @@
-var running = false,leng = 0,textEle;
+var running = false,leng = 0,textEle,listsEle;
 function show(txt)
 {
 	textEle.innerHTML = txt;
@@ -9,21 +9,32 @@ function toggle()
 }
 function choose(){
 	if(!running)return;
-	var rand = Math.floor(Math.random()*leng);
+	var rand = Math.floor(Math.random()*window.list.length);
 	show(window.list[rand]);
 }
 function init(){
-	if(
-		typeof window.list != "object" ||
-		window.list.length == 0
-	)
+	if(typeof window.lists != "object")
 	{
 		alert("conf.js中有错误");
 		return;
 	}
-	leng = window.list.length;
 	textEle = document.getElementById("inner");
 	document.getElementById("inner").onclick = toggle;
+	listsEle = document.getElementById("lists");
+	for(i in window.lists)
+	{
+		var li = document.createElement("li");
+		li.innerHTML = i;
+		li.onclick = function(){
+			window.list = window.lists[this.innerHTML];
+			start();
+			var selEle = document.getElementById("sel");
+			selEle.style.display = "none";
+		}
+		listsEle.appendChild(li);
+	}
+}
+function start(){
 	setInterval(choose , 10);
 }
 

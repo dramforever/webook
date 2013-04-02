@@ -5,8 +5,13 @@
         <link rel="stylesheet" href="style.css" />
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
-    <body>
-    	<table id="outer"><tr>
+    <body onhashchange="hashchange();">
+    	<table class="full" id="sel"><tr>
+        	<td>选择一个名单：
+            <ol id="lists"></ol>
+            </td>        
+        </tr></table>
+    	<table id="outer" class="full"><tr>
         	<td id="inner">点击此处开始和停止</td>
         </tr></table>
     </body>
