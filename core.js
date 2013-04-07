@@ -31,6 +31,7 @@ function init(){
 			start();
 			var selEle = document.getElementById("sel");
 			selEle.style.display = "none";
+			x++;
 		}
 		listsEle.appendChild(li);
 	}
