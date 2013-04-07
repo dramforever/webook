@@ -25,7 +25,7 @@ function init(){
 	for(i in window.lists)
 	{
 		var li = document.createElement("li");
-		li.innerHTML = x.toString + ". " + i;
+		li.innerHTML = x.toString() + ". " + i;
 		li.onclick = function(){
 			window.list = window.lists[this.innerHTML.replace(/^\d+?\. /,"")];
 			start();
