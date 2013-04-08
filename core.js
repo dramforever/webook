@@ -35,9 +35,23 @@ function init(){
 		listsEle.appendChild(li);
 		x++;
 	}
+	document.body.onkeydown = keydown;
 }
 function start(){
 	setInterval(choose , 10);
 }
-
+function keydown(e){
+	var keynum;
+	if(window.event) // IE
+	{
+		keynum = event.keyCode
+	}
+	else if(e.which) // Netscape/Firefox/Opera
+	{
+		keynum = e.which;
+	}
+	if(keynum == 27 /* Esc */)
+		window.location.reload();
+}
 window.onload = init;
+
