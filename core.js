@@ -77,5 +77,9 @@ function keydown(e){
 			}
 		}
 	}
+	else if(keynum == 81 /* q */)
+	{
+		window.close();
+	}
 }
 window.onload = init;
