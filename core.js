@@ -1,8 +1,9 @@
-var running = false,leng = 0,textEle,listsEle;
+var running = false,leng = 0,textEle,listsEle,outerEle;
 function hidesel()
 {
 	var selEle = document.getElementById("sel");
 	selEle.style.display = "none";
+	outerEle.style.display = "block";
 }
 function show(txt)
 {
@@ -26,6 +27,8 @@ function init(){
 	textEle = document.getElementById("inner");
 	document.getElementById("inner").onclick = toggle;
 	listsEle = document.getElementById("lists");
+	outerEle = document.getElementById("outer");
+	outerEle.style.display = "none";
 	var x = 1;
 	for(i in window.lists)
 	{
