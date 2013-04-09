@@ -51,7 +51,13 @@ function keydown(e){
 		keynum = e.which;
 	}
 	if(keynum == 27 /* Esc */)
+	{
 		window.location.reload();
+	}
+	else if(keynum == 32 /* Space */){
+		if(typeof window.list != "undefined")toggle();
+		return false;
+	}
 }
 window.onload = init;
 
