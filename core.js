@@ -1,4 +1,9 @@
 var running = false,leng = 0,textEle,listsEle;
+function hidesel()
+{
+	var selEle = document.getElementById("sel");
+	selEle.style.display = "none";
+}
 function show(txt)
 {
 	textEle.innerHTML = txt;
@@ -29,8 +34,7 @@ function init(){
 		li.onclick = function(){
 			window.list = window.lists[this.innerHTML.replace(/^\d+?\. /,"")];
 			start();
-			var selEle = document.getElementById("sel");
-			selEle.style.display = "none";
+			hidesel();
 		}
 		listsEle.appendChild(li);
 		x++;
@@ -58,6 +62,20 @@ function keydown(e){
 		if(typeof window.list != "undefined")toggle();
 		return false;
 	}
+	else if(keynum <= 53 && keynum >= 49) /* Between 1 and 5 */
+	{
+		var cnt = 48;
+		for(i in window.lists)
+		{
+			cnt++;
+			if(cnt == keynum)
+			{
+				window.list = window.lists[i];
+				start();
+				hidesel();
+				break;
+			}
+		}
+	}
 }
 window.onload = init;
-
